@@ -1,14 +1,30 @@
-$(function () {
+$(function() {
 
-  var signIn = $("#signin");
+    var success = $(".alert-success");
+    var error = $(".alert-danger");
 
-  signIn.on('click', function (e) {
-    e.preventDefault();
+    success.hide();
+    error.hide();
 
-    var username = $("#email").val();
-    var password = $("#password").val();
+    var signIn = $("#signin");
 
-    console.log(username, password);
-  });
+    signIn.on('click', function(e) {
+        e.preventDefault();
 
- });
+        var username = $("#email").val();
+        var password = $("#password").val();
+
+        if (username == "camila" && password == "holi") {
+            error.hide();
+            success.show();
+        }
+        else {
+            success.hide();
+            error.show();
+        }
+
+        console.log(username, password);
+
+    });
+
+});
